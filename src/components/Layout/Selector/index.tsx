@@ -1,4 +1,8 @@
-export const Selector = () => (
-    <>
-    </>
-  )
+import * as React from "react";
+
+export default function Selector() {
+  return (
+  <>
+  </>
+  );
+}

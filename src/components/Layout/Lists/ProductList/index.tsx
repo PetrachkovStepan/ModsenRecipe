@@ -1,9 +1,12 @@
-import { RecipeCard } from "../RecipeCard"
+import * as React from "react";
+import ProductCard from "../ProductCard";
 
-export const ProductList = () => (
+export default function ProductList() {
+  return (
     <>
-        <RecipeCard/>
-        <RecipeCard/>
-        <RecipeCard/>
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
     </>
-  )
+  );
+}

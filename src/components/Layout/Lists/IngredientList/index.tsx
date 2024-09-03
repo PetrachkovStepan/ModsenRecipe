@@ -1,7 +1,10 @@
-import { Ingredient } from "../Ingredient";
+import * as React from "react";
+import Ingredient from "../Ingredient";
 
-export const IngredientList = () => (
+export default function IngredientList() {
+  return (
     <>
-        <Ingredient/>
+      <Ingredient />
     </>
-  )
+  );
+}

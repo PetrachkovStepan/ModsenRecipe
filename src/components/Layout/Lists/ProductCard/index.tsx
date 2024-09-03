@@ -1,4 +1,5 @@
-export const ProductCard = () => (
-    <>
-    </>
-  )
+import * as React from "react";
+
+export default function ProductCard() {
+  return <></>;
+}

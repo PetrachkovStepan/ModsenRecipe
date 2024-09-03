@@ -1,7 +1,10 @@
-import { RecipeCard } from "../RecipeCard";
+import * as React from "react";
+import RecipeCard from "../RecipeCard";
 
-export const RecipeList = () => (
+export default function RecipeList() {
+  return (
     <>
-        <RecipeCard/>
+      <RecipeCard />
     </>
-  )
+  );
+}

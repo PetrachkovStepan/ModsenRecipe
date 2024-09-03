@@ -1,9 +1,12 @@
-import { IngredientList } from "../../components/Layout/Lists/IngredientList"
-import { ProductList } from "../../components/Layout/Lists/ProductList"
+import * as React from "react";
+import IngredientList from "../../components/Layout/Lists/IngredientList";
+import ProductList from "../../components/Layout/Lists/ProductList";
 
-export const SearchPage = () => (
+export default function SearchPage() {
+  return (
     <>
-        <IngredientList/>
-        <ProductList/>
+      <IngredientList />
+      <ProductList />
     </>
-  )
+  );
+}

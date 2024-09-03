@@ -1,4 +1,8 @@
-export const Button = () => (
-    <>
-    </>
-  )
+import * as React from "react";
+
+export default function Button() {
+  return (
+  <>
+  </>
+  );
+}

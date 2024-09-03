@@ -1,11 +1,14 @@
-import { HomePage } from "../HomePage"
-import { SearchPage } from "../SearchPage"
-import { Page404 } from "../Page404"
+import SearchPage from "../SearchPage";
+import Page404 from "../Page404";
+import HomePage from "../HomePage";
+import * as React from "react";
 
-export const Outlet = () => (
-  <>
-    <HomePage/>
-    <SearchPage/>
-    <Page404/>
-  </>
-)
+export default function Outlet() {
+  return (
+    < >
+      <HomePage />
+      <SearchPage />
+      <Page404 />
+    </>
+  );
+}

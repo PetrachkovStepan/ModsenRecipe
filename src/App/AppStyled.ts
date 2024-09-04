@@ -11,7 +11,12 @@ export const Container = styled.div`
   background-color: ${WHITE};
   display: flex;
   flex-direction: column;
-`;
+  overflow: auto;
+  scrollbar-width: "none";
+  &::-webkit-scrollbar {
+      width: 0px;
+    }
+`
 
 export const MainContainer = styled.main`
   flex-grow: 1;

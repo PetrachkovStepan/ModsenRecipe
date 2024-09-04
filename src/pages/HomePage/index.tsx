@@ -1,19 +1,22 @@
-import SearchBar from "../../components/Layout/SearchBar";
-import Selector from "../../components/Layout/Selector";
-import RecipeList from "../../components/Layout/Lists/RecipeList";
 import * as React from "react";
-import { Container, SelectContainer } from "./styled";
+
+import * as Styled from "./styled";
+import Selector from "@components/Layout/Selector";
+import SearchBar from "@components/Layout/SearchBar";
+import RecipeList from "@components/Layout/Lists/RecipeList";
+import Button from "@components/Layout/Button";
 
 export default function HomePage() {
   return (
-    <Container>
-      <div>Discover Recipe & Delicious Food</div>
+    <Styled.Container>
+      <Styled.Text>Discover Recipe & Delicious Food</Styled.Text>
       <SearchBar />
-      <SelectContainer>
+      <Styled.SelectContainer>
         <Selector />
         <Selector />
-      </SelectContainer>
+      </Styled.SelectContainer>
       <RecipeList />
-    </Container>
+      <Button/>
+    </Styled.Container>
   );
 }

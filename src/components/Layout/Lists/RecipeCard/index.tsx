@@ -1,5 +1,10 @@
 import * as React from "react";
+import { Container, Img } from "./styled";
 
 export default function RecipeCard() {
-  return <></>;
+  return (
+    <Container>
+      <Img/>
+    </Container>
+  );
 }

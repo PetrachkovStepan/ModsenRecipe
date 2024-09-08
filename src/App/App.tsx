@@ -1,8 +1,9 @@
 import * as React from "react";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Outlet from "@pages/Outlet";
+
 import { Container, MainContainer } from "./AppStyled";
+import { Outlet } from "react-router";
 
 function App() {
   return (

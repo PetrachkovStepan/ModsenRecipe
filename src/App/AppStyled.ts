@@ -20,4 +20,5 @@ export const Container = styled.div`
 
 export const MainContainer = styled.main`
   flex-grow: 1;
+  margin: 20px;
 `

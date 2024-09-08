@@ -10,6 +10,8 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
+  position: fixed;
 `;
 export const Container = styled.div`
   width: 100%;

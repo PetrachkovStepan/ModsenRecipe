@@ -4,7 +4,7 @@ import * as Styled from "./styled";
 import Selector from "@components/Layout/Selector";
 import SearchBar from "@components/Layout/SearchBar";
 import RecipeList from "@components/Layout/Lists/RecipeList";
-import Button from "@components/Layout/Button";
+import ShowMoreButton from "@components/Layout/ShowMoreButton";
 
 export default function HomePage() {
   return (
@@ -16,7 +16,7 @@ export default function HomePage() {
         <Selector />
       </Styled.SelectContainer>
       <RecipeList />
-      <Button/>
+      <ShowMoreButton/>
     </Styled.Container>
   );
 }

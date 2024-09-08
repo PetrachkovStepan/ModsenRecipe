@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
         children:[
             {path: "", element: <HomePage/>},
             {path: "search", element: <SearchPage/>},
-            {path: "404", element: <Page404/>},
+            {path: "*", element: <Page404/>},
         ]
     }
 ])

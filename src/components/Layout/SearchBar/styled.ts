@@ -20,7 +20,11 @@ export const Input = styled.input`
     width: 100%;
     height: 76px;
     padding-left: 30px;
-      font-size: 24px;
+    font-size: 24px;
+    @media (width < 1024px) {
+      height: 55px;
+      font-size: 14px
+    }
     &::placeholder{
       color: ${GRAY};
       overflow:hidden;

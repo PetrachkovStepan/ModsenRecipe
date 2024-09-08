@@ -9,6 +9,10 @@ export const Container = styled.div`
   background-color: ${GRAY};
   display: flex;
   justify-content: center;
+  @media (width < 1024px) {
+    height: 372px;
+    width: 350px;    
+  }
 `;
 export const Img = styled.div`
     width: 100%;

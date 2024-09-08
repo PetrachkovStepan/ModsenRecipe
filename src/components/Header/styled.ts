@@ -21,16 +21,13 @@ export const Container = styled.div`
 export const LogoContainer = styled.div`
   margin: 18px;
 `;
-
-//Костанты ебани в media
 export const DesktopContainer = styled.div`
   margin: 18px;
   @media(width <= 1024px) {
     display: none;
   }
   display: flex;
-`
-
+`;
 export const MobileContainer = styled.div`
   margin: 18px;
   @media(width > 1024px) {

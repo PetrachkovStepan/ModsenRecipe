@@ -32,12 +32,16 @@ export const getAllDishes = async () => {
     console.log(resp)
     return resp.data.hits
 }
-export const getOneDish = async (uri:string) => {   
-    uri = "http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_f1a89654f14747509601e0d436f628af"
-    const resp = await axios.get(URL + "by-uri?type=public&uri="
-         + uri + "&app_id="
+export const getOneDish = async (uri:string) => {
+    let delIndex = uri.indexOf("recipe_")
+    let reqId = uri.slice(delIndex)
+    const resp = await axios.get(URL + reqId 
+        + "?type=public"
+         + "&app_id="
           + APP_ID + "&app_key="
            + APP_KEY 
-            + "&field=uri&field=label&field=image&field=url&field=ingredients&field=calories&field=cuisineType&field=mealType&field=dishType",)
-    return resp.data.hits[0].recipe
+            + "&field=uri&field=label&field=image&field=url&field=ingredients&field=calories&field=cuisineType&field=mealType&field=dishType")
+    console.log(resp);
+            
+    return resp.data.recipe
 }

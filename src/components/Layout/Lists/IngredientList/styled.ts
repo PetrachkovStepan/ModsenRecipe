@@ -5,6 +5,7 @@ import styled from "styled-components";
 export const ContainerBefore = styled.div`
   display:flex;
   min-height: 250px;
+  max-width: 572px;
   margin-top: 52px;
   border-radius: 20px;
   background: linear-gradient(to left, rgba(225,225,225,0.2) 0%,rgba(39,53,90,1) 100%);

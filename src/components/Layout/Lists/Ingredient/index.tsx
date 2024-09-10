@@ -2,16 +2,17 @@ import * as React from "react";
 import * as Styled from "./styled"
 import { ListPointImg } from "@assets/ListPoint";
 import ProductCard from "../ProductCard";
+import { IngredientInterface } from "@utils/types/Lists";
 
-export default function Ingredient() {
+export default function Ingredient(props:{key:string, item: IngredientInterface}) {
   return (
   <Styled.Container>
     <Styled.DescriptionContainer>
       <ListPointImg/>
-      <Styled.Text>{"1 1/2 to 2 ounces of guanciale"}</Styled.Text>
+      <Styled.Text>{props.item.text}</Styled.Text>
     </Styled.DescriptionContainer>
     <Styled.ProductCardContainer>
-      <ProductCard/>
+      <ProductCard  key={props.item.image} item={props.item}/>
     </Styled.ProductCardContainer>
   </Styled.Container>
   );

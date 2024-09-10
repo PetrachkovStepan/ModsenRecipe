@@ -8,7 +8,6 @@ export default function Selector() {
         <Styled.Option>a</Styled.Option>
         <Styled.Option>z</Styled.Option>
         <Styled.Option>x</Styled.Option>
-      
     </Styled.Select>
   </Styled.Container>
   );

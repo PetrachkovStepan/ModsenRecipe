@@ -24,6 +24,7 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 572px;
   margin: 75px 17px 75px 20px;
     @media (width < 1024px) {
       margin: 20px 17px 20px 17px;
@@ -61,6 +62,8 @@ export const DishProp = styled.span`
     color: ${WHITE};
 `
 export const DishImg = styled.img`
+  margin:30px;
+  border-radius: 28px;
     height: 520px;
     @media (width < 1024px) {
       height: 320px;

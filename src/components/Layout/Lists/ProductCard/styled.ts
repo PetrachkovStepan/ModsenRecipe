@@ -9,4 +9,5 @@ export const Container = styled.div`
 export const Image = styled.img`
     max-height:163px;
     max-width:163px;
+    border-radius:20px;
 `

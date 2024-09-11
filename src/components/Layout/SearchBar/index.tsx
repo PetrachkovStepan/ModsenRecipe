@@ -1,9 +1,11 @@
 import * as React from "react";
 
+import * as yup from 'yup'
 import { useDispatch } from "react-redux";
 
 import { SearchImg } from "@assets/SearchImg";
 import { SEARCH_LINE } from "@store/reducers/searchReducer";
+import { searchSchema } from "@utils/Validations/SearchValidation";
 
 import * as Styled from "./styled";
 
@@ -12,7 +14,10 @@ export default function SearchBar() {
   const [searchText, setSearchText] = React.useState("")
   const search = async (e: { preventDefault: () => void; }) => {
     e.preventDefault()
-    dispatch({type: SEARCH_LINE, payload: searchText})
+    const isValid = await searchSchema.isValid({searchLine:searchText})
+    if(isValid){
+      dispatch({type: SEARCH_LINE, payload: searchText})
+    }
   }
   
   return (

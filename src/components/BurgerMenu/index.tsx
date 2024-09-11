@@ -4,7 +4,7 @@ import BackHomeButton from "@components/Layout/BackHomeButton"
 
 function BurgerMenu() {
   return (
-    <Styled.Container>
+    <Styled.Container id = {"sideWrapper"}>
       <BackHomeButton/>
     </Styled.Container>
   )

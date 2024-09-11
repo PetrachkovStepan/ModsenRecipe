@@ -38,6 +38,7 @@ export default function HomePage() {
     console.log("listState100");
     console.log(list);
     if(list.length == 0){
+      setRecipes({items:[]})
       return
     }
     setRecipes({items:list})

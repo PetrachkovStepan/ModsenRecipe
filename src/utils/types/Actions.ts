@@ -14,3 +14,7 @@ export interface RecipeListAction{
     payload: RecipeInterface[],
     next: string
 }
+export interface BurgerAction{
+    type: string,
+    payload: boolean,
+}

@@ -42,5 +42,6 @@ export const NavLink = styled.span`
   flex-direction: row-reverse;
   align-items: center;
   font-size: 24px;
+  font-family: "Inter", sans-serif;
   color:${GRAY}
 `

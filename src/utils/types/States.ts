@@ -16,3 +16,6 @@ export interface SearchState {
 export interface BurgerState {
     isOpen: boolean
   }
+export interface LoaderState {
+    isOpen: boolean
+  }

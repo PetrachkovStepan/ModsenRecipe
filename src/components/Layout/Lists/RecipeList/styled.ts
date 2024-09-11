@@ -21,9 +21,11 @@ export const Line = styled.span`
   height: 44px;
   background-color: ${ORANGE};
   border-radius: 100vh;
+  font-family: "Inter", sans-serif;
 `
 export const Text = styled.span`
   font-size: 40px;
+  font-family: "Inter", sans-serif;
 `
 
 export const HeadContainer = styled.div`

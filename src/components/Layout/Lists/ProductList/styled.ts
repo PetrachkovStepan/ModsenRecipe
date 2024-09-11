@@ -19,5 +19,6 @@ export const ListContainer = styled.div`
 
 export const Text = styled.span`
   font-size: 24px;
+  font-family: "Inter", sans-serif;
   color: ${WHITE};
 `

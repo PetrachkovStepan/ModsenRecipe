@@ -9,8 +9,13 @@ import IngredientList from "@components/Layout/Lists/IngredientList";
 import * as Styled from "./styled"
 import { useTypeSelector } from "@hooks/useTypeSelector";
 import { getOneDish } from "@utils/http/RecipeAPI";
+import { useDispatch } from "react-redux";
+import { CHANGE_LOADER } from "@store/reducers/loaderReduser";
+import Loader from "@components/Loader";
 
 export default function SearchPage() {
+  const dispatch = useDispatch()
+  const loaderState = useTypeSelector(state => state.loader)
   const [recipe, setRecipe] = React.useState<any>({
     label: "",
     calories: 0,
@@ -27,33 +32,39 @@ export default function SearchPage() {
     getDishInfo()
   },[]);
   const getDishInfo = async () => {
+    dispatch({type:CHANGE_LOADER, payload: true})
     const resp = await getOneDish(state.uri)
+    dispatch({type:CHANGE_LOADER, payload: false})
     setRecipe(resp)
   }
   return (
     <Styled.Container>
-      <Styled.DishImg src = {recipe.image}/>
-      <Styled.InfoContainer>
-        <Styled.InfoWrapper>
-          <Styled.MealType>Meal type - {recipe.mealType}</Styled.MealType>
-          <Styled.MealName>{recipe.label}</Styled.MealName>
-          
-          <Styled.DishPropertiesContainer>
-            <Styled.DishPropertiesWrapper>
-              <CaloryImg/>
-              <Styled.DishProp>{recipe.calories} calories</Styled.DishProp>
-            </Styled.DishPropertiesWrapper>
-            <Styled.DishPropertiesWrapper>
-              <MedalImg/>
-              <Styled.DishProp>Cuisine Type - {recipe.cuisineType}</Styled.DishProp>
-            </Styled.DishPropertiesWrapper>
-          </Styled.DishPropertiesContainer>
+      {!loaderState.isOpen ? 
+      <>
+        <Styled.DishImg src = {recipe.image}/>
+          <Styled.InfoContainer>
+            <Styled.InfoWrapper>
+              <Styled.MealType>Meal type - {recipe.mealType}</Styled.MealType>
+              <Styled.MealName>{recipe.label}</Styled.MealName>
+              
+              <Styled.DishPropertiesContainer>
+                <Styled.DishPropertiesWrapper>
+                  <CaloryImg/>
+                  <Styled.DishProp>{recipe.calories} calories</Styled.DishProp>
+                </Styled.DishPropertiesWrapper>
+                <Styled.DishPropertiesWrapper>
+                  <MedalImg/>
+                  <Styled.DishProp>Cuisine Type - {recipe.cuisineType}</Styled.DishProp>
+                </Styled.DishPropertiesWrapper>
+              </Styled.DishPropertiesContainer>
 
-          <IngredientList items={recipe.ingredients}/>
-          <ProductList items={recipe.ingredients}/>
-          <RecypeLink link={recipe.url}/>
-        </Styled.InfoWrapper>
-      </Styled.InfoContainer>
+              <IngredientList items={recipe.ingredients}/>
+              <ProductList items={recipe.ingredients}/>
+              <RecypeLink link={recipe.url}/>
+            </Styled.InfoWrapper>
+          </Styled.InfoContainer>
+      </> 
+      : <Loader/>}
     </Styled.Container>
   );
 }

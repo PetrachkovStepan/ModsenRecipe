@@ -18,3 +18,7 @@ export interface BurgerAction{
     type: string,
     payload: boolean,
 }
+export interface LoaderAction{
+    type: string,
+    payload: boolean,
+}

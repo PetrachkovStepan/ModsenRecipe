@@ -21,6 +21,7 @@ export const Input = styled.input`
     height: 76px;
     padding-left: 30px;
     font-size: 24px;
+    font-family: "Inter", sans-serif;
     @media (width < 1024px) {
       height: 55px;
       font-size: 14px

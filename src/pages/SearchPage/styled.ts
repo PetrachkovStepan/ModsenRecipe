@@ -49,6 +49,7 @@ export const MealType = styled.span`
 `
 export const MealName = styled.span`
     font-size: 40px;
+    font-family: "Inter", sans-serif;
     margin-top:10px;
     color: ${WHITE};
     @media (width < 1024px) {
@@ -57,6 +58,7 @@ export const MealName = styled.span`
 `
 export const DishProp = styled.span`
     font-size: 16px;
+    font-family: "Inter", sans-serif;
     margin-left:15px;
     margin-right: 45px;
     color: ${WHITE};

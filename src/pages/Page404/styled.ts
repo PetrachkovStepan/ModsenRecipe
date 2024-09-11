@@ -14,6 +14,7 @@ export const Container = styled.div`
 `;
 export const Text404 = styled.span`
   font-size: 122px;
+  font-family: "Inter", sans-serif;
   color: ${ORANGE};
   @media (width < 1024px) {
     font-size: 40px
@@ -21,6 +22,7 @@ export const Text404 = styled.span`
 `;
 export const TextOops = styled.span`
   font-size: 46px;
+  font-family: "Inter", sans-serif;
   margin-top: 24px;
   @media (width < 1024px) {
     margin-top: 32px;
@@ -29,6 +31,7 @@ export const TextOops = styled.span`
 `;
 export const TextDescription = styled.span`
   font-size: 21px;
+  font-family: "Inter", sans-serif;
   margin-top: 45px;
   margin-bottom: 45px;
   color: ${DARK_GRAY};

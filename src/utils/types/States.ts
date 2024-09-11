@@ -13,3 +13,6 @@ export interface SearchState {
     [index: string]: string;
   }
  
+export interface BurgerState {
+    isOpen: boolean
+  }

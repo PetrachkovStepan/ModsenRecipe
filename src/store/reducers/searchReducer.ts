@@ -6,13 +6,13 @@ export const SEARCH_LINE = 'SEARCH_LINE'
 export const DISH_CATEGORY = 'DISH_CATEGORY'
 export const DIET_CATEGORY = 'DIET_CATEGORY'
 
-const initilStore: SearchState = {
+const defaultState: SearchState = {
   searchLine: "",
   dish_category: DISH_CATEGORIES[0],
   diet_category: DIET_CATEGORIES[0],
 }
 
-export const searchReducer = (state = initilStore, action: SearchAction): SearchState => {
+export const searchReducer = (state = defaultState, action: SearchAction): SearchState => {
   switch (action.type) {
     case SEARCH_LINE:
       return {...state, searchLine: action.payload}

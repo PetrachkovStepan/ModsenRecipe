@@ -28,7 +28,6 @@ export default function SearchPage() {
   },[]);
   const getDishInfo = async () => {
     const resp = await getOneDish(state.uri)
-    console.log(resp);
     setRecipe(resp)
   }
   return (

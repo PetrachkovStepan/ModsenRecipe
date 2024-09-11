@@ -25,7 +25,9 @@ export const Select = styled.select`
 
 
 export const Option = styled.option`
-  
+  border-radius:15px;
+  border: 1px solid ${ORANGE};
+
 `
 export const Img = styled.div`
     position: absolute;

@@ -13,20 +13,6 @@ let a = `https://api.edamam.com/api/recipes/v2?type=any
 &dishType=Biscuits%20and%20cookies
 &imageSize=REGULAR`
 
-let b = `https://api.edamam.com/api/recipes/v2/by-uri?type=public
-&uri=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_f1a89654f14747509601e0d436f628af
-&app_id=79c47d40
-&app_key=48d44de737053a2137e3405fac9bb22e
-&field=uri
-&field=label
-&field=image
-&field=url
-&field=ingredients
-&field=calories
-&field=cuisineType
-&field=mealType
-&field=dishType`
-
 export const getAllDishes = async () => {    
     const resp = await axios.get(a)
     console.log(resp)

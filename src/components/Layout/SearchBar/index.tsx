@@ -6,14 +6,13 @@ import { SEARCH_LINE } from "@store/reducers/searchReducer";
 import { useTypeSelector } from "@hooks/useTypeSelector";
 
 export default function SearchBar() {
-  const state = useTypeSelector(state => state.search)
   const dispatch = useDispatch()
   const [searchText, setSearchText] = React.useState("")
-  const search = async () => {
-    console.log("search");
+  const search = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault()
     dispatch({type: SEARCH_LINE, payload: searchText})
-    console.log(state);
   }
+  
   return (
     <Styled.Container>
       <Styled.Input placeholder = "Search Your Favorite Food"

@@ -1,17 +1,8 @@
 import axios from "axios";
 
-const URL = "https://api.edamam.com/api/recipes/v2/"
-const APP_ID = "79c47d40"
-const APP_KEY = "48d44de737053a2137e3405fac9bb22e"
-
-
-//get all
-let a = `https://api.edamam.com/api/recipes/v2?type=any
-&app_id=79c47d40
-&app_key=%2048d44de737053a2137e3405fac9bb22e%09
-&diet=balanced
-&dishType=Biscuits%20and%20cookies
-&imageSize=REGULAR`
+const URL = process.env.URL
+const APP_ID = process.env.APP_ID
+const APP_KEY = process.env.APP_KEY
 
 export const getAllDishes = async (searchLine:string, dietCategory:string, dishCategory: string) => {   
     console.log(dietCategory + " " + dishCategory + " " + searchLine);

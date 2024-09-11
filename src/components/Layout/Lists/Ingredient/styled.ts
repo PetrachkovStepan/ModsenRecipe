@@ -19,6 +19,7 @@ export const ProductCardContainer = styled.div`
 `;
 export const Text = styled.span`
   font-size: 16px;
+  font-family: "Inter", sans-serif;
   margin-left:20px;
   color: ${LIGTH_BLUE};
   @media (width < 1024px) {

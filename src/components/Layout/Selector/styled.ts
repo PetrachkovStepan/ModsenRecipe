@@ -21,6 +21,7 @@ export const Select = styled.select`
     height: 100%;
     padding-left: 15px;
     font-size: 16px;
+    font-family: "Inter", sans-serif;
 `;
 
 

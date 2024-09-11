@@ -22,6 +22,7 @@ export const SelectContainer = styled.div`
 `;
 export const Text = styled.span`
   font-size: 78px;
+  font-family: "Inter", sans-serif;
   margin-top:126px;
   color: ${DARK_BLUE};
   @media(width < 1024px) {

@@ -10,20 +10,16 @@ import { Container, MainContainer } from "./AppStyled";
 import { useTypeSelector } from "@hooks/useTypeSelector";
 
 function App() {
-  const state = useTypeSelector(state => state.burger)
-  const [burger, setBurger] = React.useState(false)
+  const burgerState = useTypeSelector(state => state.burger)
   React.useEffect(() => {
-    console.log("state.isOpen");
-    console.log(state.isOpen);
     const element = document.getElementById('sideWrapper')
     if (element) {
-    if (state.isOpen)
+    if (burgerState.isOpen)
       element.style.right = '0'
     else
       element.style.right = '-390px'
-    }
-    
-  },[state]);
+    }    
+  },[burgerState]);
   return (
     <Container>
       <Header />

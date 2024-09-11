@@ -30,6 +30,7 @@ export const Text = styled.span`
   align-items: center;
   justify-content: center;
     font-size: 22px;
+    font-family: "Inter", sans-serif;
     margin-top: 25px;
     color: ${DARK_BLUE};
   @media (width < 1024px) {

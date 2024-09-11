@@ -18,5 +18,6 @@ export const Container = styled.button`
 `;
 export const Text = styled.span`
   font-size: 14px;
+  font-family: "Inter", sans-serif;
   color: ${GRAY};
 `;

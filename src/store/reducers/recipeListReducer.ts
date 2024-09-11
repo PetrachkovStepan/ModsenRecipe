@@ -16,6 +16,11 @@ export const recipeListReducer = (state = defaultState,
         case SET_ITEMS:
             return{...state, items: action.payload}
         case ADD_ITEMS:
+          console.log("action.payload")
+          console.log(state)
+          console.log(state.items)
+          console.log(action.payload)
+          console.log([...state.items,...action.payload])
             return{...state, items: [...state.items,...action.payload]}
         case NEXT_PAGE:
             return{...state, href: action.next}

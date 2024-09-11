@@ -50,6 +50,11 @@ const config = {
       </html>`,
       filename: "index.html",
     }),
+    new webpack.EnvironmentPlugin({
+      URL : "https://api.edamam.com/api/recipes/v2/",
+      APP_ID : "79c47d40",
+      APP_KEY : "48d44de737053a2137e3405fac9bb22e",
+    }),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],

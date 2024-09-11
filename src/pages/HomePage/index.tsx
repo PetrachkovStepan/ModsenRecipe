@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { NEXT_PAGE, SET_ITEMS } from "@store/reducers/recipeListReducer";
 import { DIET_CATEGORIES, DISH_CATEGORIES } from "@store/actions/searchActions";
 import { DIET_CATEGORY, DISH_CATEGORY } from "@store/reducers/searchReducer";
+import { RecipeInterface } from "@utils/types/Lists";
 
 export default function HomePage() {
   const dispatch = useDispatch()
@@ -19,21 +20,27 @@ export default function HomePage() {
   const [recipes, setRecipes] = React.useState<any>({items:[]})
   
   React.useEffect(() => {
-    console.log("state");
-    console.log(searchState);
     getAllRecipes()
   },[searchState]);
+
+  React.useEffect(() => {
+    setValues(listState.items)
+  },[listState]);
+
   const getAllRecipes = async () => {
     let resp = await getAllDishes(searchState.searchLine, searchState.diet_category, searchState.dish_category)
-    dispatch({type: SET_ITEMS, payload: {items:resp.hits}})
-    dispatch({type: NEXT_PAGE, payload: {}, next: resp._links.next.href})
-    if(resp._links.next.href != undefined){
-      dispatch({type: NEXT_PAGE, payload: {}, href:resp._links.next.href})
-    }    
-    console.log("listState");
-    console.log(listState);
-    console.log(resp._links.next.href);
-    setRecipes({items:resp.hits})
+    dispatch({type: SET_ITEMS, payload: resp.hits})
+    if(resp._links.next != undefined){
+      dispatch({type: NEXT_PAGE, payload: [], next: resp._links.next.href})  
+    }
+  }
+  const setValues = (list: RecipeInterface[]) => {
+    console.log("listState100");
+    console.log(list);
+    if(list.length == 0){
+      return
+    }
+    setRecipes({items:list})
   }
   return (
     <Styled.Container>

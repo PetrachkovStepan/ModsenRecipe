@@ -13,31 +13,42 @@ let a = `https://api.edamam.com/api/recipes/v2?type=any
 &dishType=Biscuits%20and%20cookies
 &imageSize=REGULAR`
 
-let b = `https://api.edamam.com/api/recipes/v2/by-uri?type=public
-&uri=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_f1a89654f14747509601e0d436f628af
-&app_id=79c47d40
-&app_key=48d44de737053a2137e3405fac9bb22e
-&field=uri
-&field=label
-&field=image
-&field=url
-&field=ingredients
-&field=calories
-&field=cuisineType
-&field=mealType
-&field=dishType`
-
-export const getAllDishes = async () => {    
-    const resp = await axios.get(a)
+export const getAllDishes = async (searchLine:string, dietCategory:string, dishCategory: string) => {   
+    console.log(dietCategory + " " + dishCategory + " " + searchLine);
+    let diet = ""
+    let dish = ""
+    let search = ""
+    if(dietCategory){
+        diet = "&diet=" + dietCategory
+    }
+    if(dishCategory){
+        dish = "&dishType=" + dishCategory
+    }
+    if(searchLine){
+        search = "&q=" + searchLine
+    }
+    const resp = await axios.get("https://api.edamam.com/api/recipes/v2?type=any"+ search +
+        "&app_id="+APP_ID +
+        "&app_key=%20"+APP_KEY+
+        "%09"+ diet + dish + 
+        "&imageSize=REGULAR")
     console.log(resp)
-    return resp.data.hits
+    return resp.data
 }
-export const getOneDish = async (uri:string) => {   
-    uri = "http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_f1a89654f14747509601e0d436f628af"
-    const resp = await axios.get(URL + "by-uri?type=public&uri="
-         + uri + "&app_id="
+export const getMoreDishes = async (href:string) => {
+    const resp = await axios.get(href)
+    console.log(resp);
+    return resp.data
+}
+export const getOneDish = async (uri:string) => {
+    let delIndex = uri.indexOf("recipe_")
+    let reqId = uri.slice(delIndex)
+    const resp = await axios.get(URL + reqId 
+        + "?type=public"
+         + "&app_id="
           + APP_ID + "&app_key="
            + APP_KEY 
-            + "&field=uri&field=label&field=image&field=url&field=ingredients&field=calories&field=cuisineType&field=mealType&field=dishType",)
-    return resp.data.hits[0].recipe
+            + "&field=uri&field=label&field=image&field=url&field=ingredients&field=calories&field=cuisineType&field=mealType&field=dishType")
+
+    return resp.data.recipe
 }

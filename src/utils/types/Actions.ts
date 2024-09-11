@@ -1,3 +1,4 @@
+import { RecipeInterface } from "./Lists";
 import { Recipe } from "./Recipe";
 
 export interface RecipeAction{
@@ -7,4 +8,9 @@ export interface RecipeAction{
 export interface SearchAction {
     type: string;
     payload: string;
+}
+export interface RecipeListAction{
+    type: string,
+    payload: RecipeInterface[],
+    next: string
 }

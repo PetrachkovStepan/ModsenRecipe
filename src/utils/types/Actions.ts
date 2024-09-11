@@ -12,4 +12,5 @@ export interface SearchAction {
 export interface RecipeListAction{
     type: string,
     payload: RecipeInterface[],
+    next: string
 }

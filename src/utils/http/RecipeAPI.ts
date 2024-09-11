@@ -13,10 +13,32 @@ let a = `https://api.edamam.com/api/recipes/v2?type=any
 &dishType=Biscuits%20and%20cookies
 &imageSize=REGULAR`
 
-export const getAllDishes = async () => {    
-    const resp = await axios.get(a)
+export const getAllDishes = async (searchLine:string, dietCategory:string, dishCategory: string) => {   
+    console.log(dietCategory + " " + dishCategory + " " + searchLine);
+    let diet = ""
+    let dish = ""
+    let search = ""
+    if(dietCategory){
+        diet = "&diet=" + dietCategory
+    }
+    if(dishCategory){
+        dish = "&dishType=" + dishCategory
+    }
+    if(searchLine){
+        search = "&q=" + searchLine
+    }
+    const resp = await axios.get("https://api.edamam.com/api/recipes/v2?type=any"+ search +
+        "&app_id="+APP_ID +
+        "&app_key=%20"+APP_KEY+
+        "%09"+ diet + dish + 
+        "&imageSize=REGULAR")
     console.log(resp)
-    return resp.data.hits
+    return resp.data
+}
+export const getMoreDishes = async (href:string) => {
+    const resp = await axios.get(href)
+    console.log(resp);
+    return resp.data
 }
 export const getOneDish = async (uri:string) => {
     let delIndex = uri.indexOf("recipe_")
@@ -27,7 +49,6 @@ export const getOneDish = async (uri:string) => {
           + APP_ID + "&app_key="
            + APP_KEY 
             + "&field=uri&field=label&field=image&field=url&field=ingredients&field=calories&field=cuisineType&field=mealType&field=dishType")
-    console.log(resp);
-            
+
     return resp.data.recipe
 }

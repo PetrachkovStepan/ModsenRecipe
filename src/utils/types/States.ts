@@ -6,6 +6,7 @@ export interface RecipeState{
 }
 export interface RecipeListState{
     items: RecipeInterface[],
+    href: string,
 }
 export interface SearchState {
     searchLine: string;

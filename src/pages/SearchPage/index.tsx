@@ -1,17 +1,18 @@
 import * as React from "react";
-import Image from "@assets/DishImg.png"
+
+import { useDispatch } from "react-redux";
+
+import Loader from "@components/Loader";
 import { MedalImg } from "@assets/MedalImg";
 import { CaloryImg } from "@assets/CaloryImg";
+import { getOneDish } from "@utils/http/RecipeAPI";
 import RecypeLink from "@components/Layout/RecypeLink";
+import { useTypeSelector } from "@hooks/useTypeSelector";
+import { CHANGE_LOADER } from "@store/reducers/loaderReduser";
 import ProductList from "@components/Layout/Lists/ProductList";
 import IngredientList from "@components/Layout/Lists/IngredientList";
 
 import * as Styled from "./styled"
-import { useTypeSelector } from "@hooks/useTypeSelector";
-import { getOneDish } from "@utils/http/RecipeAPI";
-import { useDispatch } from "react-redux";
-import { CHANGE_LOADER } from "@store/reducers/loaderReduser";
-import Loader from "@components/Loader";
 
 export default function SearchPage() {
   const dispatch = useDispatch()

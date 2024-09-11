@@ -1,7 +1,9 @@
 import * as React from "react";
-import Ingredient from "../Ingredient";
-import * as Styled from "./styled"
+
 import { IngredientListInterface } from "@utils/types/Lists";
+
+import * as Styled from "./styled"
+import Ingredient from "../Ingredient";
 
 export default function IngredientList({items}:IngredientListInterface) {
   return (

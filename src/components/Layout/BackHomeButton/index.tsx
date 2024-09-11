@@ -1,6 +1,8 @@
 import * as React from "react";
-import * as Styled from "./styled";
+
 import { useNavigate } from "react-router";
+
+import * as Styled from "./styled";
 
 
 export default function BackHomeButton() {

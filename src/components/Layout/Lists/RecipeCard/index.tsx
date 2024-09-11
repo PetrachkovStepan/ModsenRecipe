@@ -1,13 +1,12 @@
 import * as React from "react";
 
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
-import Image from "@assets/Rectangle 68.png"
+import { RecipeInterface } from "@utils/types/Lists";
+import { SET_ITEM } from "@store/reducers/recipeReducer";
 
 import * as Styled from "./styled";
-import { RecipeInterface } from "@utils/types/Lists";
-import { useDispatch } from "react-redux";
-import { SET_ITEM } from "@store/reducers/recipeReducer";
 
 export default function RecipeCard(props:{key:string, item: RecipeInterface}) {
   const navigate = useNavigate();

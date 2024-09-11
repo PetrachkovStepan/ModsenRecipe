@@ -1,7 +1,8 @@
 import * as React from "react";
-import * as Styled from "./styled"
-import Image from "@assets/Rectangle 68.png"
+
 import { ProductInterface } from "@utils/types/Lists";
+
+import * as Styled from "./styled"
 
 export default function ProductCard(props:{key:string, item: ProductInterface}) { 
   return (

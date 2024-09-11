@@ -1,8 +1,10 @@
 import * as React from "react";
-import * as Styled from "./styled"
+
 import { ListPointImg } from "@assets/ListPoint";
-import ProductCard from "../ProductCard";
 import { IngredientInterface } from "@utils/types/Lists";
+
+import * as Styled from "./styled"
+import ProductCard from "../ProductCard";
 
 export default function Ingredient(props:{key:string, item: IngredientInterface}) {
   return (

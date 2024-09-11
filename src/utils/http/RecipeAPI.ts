@@ -23,12 +23,10 @@ export const getAllDishes = async (searchLine:string, dietCategory:string, dishC
         "&app_key=%20"+APP_KEY+
         "%09"+ diet + dish + 
         "&imageSize=REGULAR")
-    console.log(resp)
     return resp.data
 }
 export const getMoreDishes = async (href:string) => {
     const resp = await axios.get(href)
-    console.log(resp);
     return resp.data
 }
 export const getOneDish = async (uri:string) => {

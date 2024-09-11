@@ -1,7 +1,8 @@
 import * as React from "react";
-import * as Styled from "./styled";
-import { DIET_CATEGORIES } from "@store/actions/searchActions";
+
 import { useDispatch } from "react-redux";
+
+import * as Styled from "./styled";
 
 export default function Selector(props:{params:string[], actionType: string}) {
   const dispatch = useDispatch()

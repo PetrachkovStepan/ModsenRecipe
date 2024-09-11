@@ -1,7 +1,9 @@
 import * as React from "react";
-import ProductCard from "../ProductCard";
-import * as Styled from "./styled"
+
 import { ProductListInterface } from "@utils/types/Lists";
+
+import * as Styled from "./styled"
+import ProductCard from "../ProductCard";
 
 export default function ProductList({items}:ProductListInterface) {
   return (

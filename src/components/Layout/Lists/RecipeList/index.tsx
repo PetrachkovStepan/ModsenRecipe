@@ -1,8 +1,9 @@
 import * as React from "react";
 
+import { RecipeListInterface } from "@utils/types/Lists";
+
 import * as Styled from "./styled";
 import RecipeCard from "../RecipeCard";
-import { RecipeListInterface } from "@utils/types/Lists";
 
 export default function RecipeList({items}:RecipeListInterface) {
   

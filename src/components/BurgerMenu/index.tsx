@@ -1,6 +1,8 @@
 import * as React from "react"
-import * as Styled from "./styled"
+
 import BackHomeButton from "@components/Layout/BackHomeButton"
+
+import * as Styled from "./styled"
 
 function BurgerMenu() {
   return (

@@ -1,9 +1,11 @@
 import * as React from "react";
-import * as Styled from "./styled";
-import { SearchImg } from "@assets/SearchImg";
+
 import { useDispatch } from "react-redux";
+
+import { SearchImg } from "@assets/SearchImg";
 import { SEARCH_LINE } from "@store/reducers/searchReducer";
-import { useTypeSelector } from "@hooks/useTypeSelector";
+
+import * as Styled from "./styled";
 
 export default function SearchBar() {
   const dispatch = useDispatch()

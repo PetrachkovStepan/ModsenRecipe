@@ -1,19 +1,21 @@
 import * as React from "react";
 
-import * as Styled from "./styled";
+import { useDispatch } from "react-redux";
+
+import Loader from "@components/Loader";
 import Selector from "@components/Layout/Selector";
 import SearchBar from "@components/Layout/SearchBar";
-import RecipeList from "@components/Layout/Lists/RecipeList";
-import ShowMoreButton from "@components/Layout/ShowMoreButton";
 import { getAllDishes } from "@utils/http/RecipeAPI";
-import { useTypeSelector } from "@hooks/useTypeSelector";
-import { useDispatch } from "react-redux";
-import { NEXT_PAGE, SET_ITEMS } from "@store/reducers/recipeListReducer";
-import { DIET_CATEGORIES, DISH_CATEGORIES } from "@store/actions/searchActions";
-import { DIET_CATEGORY, DISH_CATEGORY } from "@store/reducers/searchReducer";
 import { RecipeInterface } from "@utils/types/Lists";
+import { useTypeSelector } from "@hooks/useTypeSelector";
+import RecipeList from "@components/Layout/Lists/RecipeList";
 import { CHANGE_LOADER } from "@store/reducers/loaderReduser";
-import Loader from "@components/Loader";
+import ShowMoreButton from "@components/Layout/ShowMoreButton";
+import { NEXT_PAGE, SET_ITEMS } from "@store/reducers/recipeListReducer";
+import { DIET_CATEGORY, DISH_CATEGORY } from "@store/reducers/searchReducer";
+import { DIET_CATEGORIES, DISH_CATEGORIES } from "@store/actions/searchActions";
+
+import * as Styled from "./styled";
 
 export default function HomePage() {
   const dispatch = useDispatch()
@@ -40,8 +42,6 @@ export default function HomePage() {
     }
   }
   const setValues = (list: RecipeInterface[]) => {
-    console.log("listState100");
-    console.log(list);
     if(list.length == 0){
       setRecipes({items:[]})
       return

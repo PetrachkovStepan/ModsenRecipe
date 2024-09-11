@@ -1,12 +1,13 @@
 import * as React from "react";
 
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+
+import { Logo } from "@assets/Logo";
 import { BurgerButtonImg } from "@assets/BurgerButtonImg";
+import { CHANGE_BURGER } from "@store/reducers/burgerMenuReducer";
 
 import * as Styled from "./styled";
-import { Logo } from "@assets/Logo";
-import { useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
-import { CHANGE_BURGER } from "@store/reducers/burgerMenuReducer";
 
 export default function Header() {
   const dispatch = useDispatch()
@@ -15,8 +16,6 @@ export default function Header() {
     navigate("/")
   }
   const hideBurger = () => {
-    console.log("aaaaaaaaaaaaaaaaa");
-    
     dispatch({type: CHANGE_BURGER, payload: true})
   }
   return (

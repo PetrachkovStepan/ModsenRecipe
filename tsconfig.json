@@ -1,7 +1,27 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "strict": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@store/*": ["./src/store/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@api/*": ["./src/api/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+    },
+    "types": ["@types/jest", "@types/node", "cypress"]
+  },
+  "include": ["./src/**/*", "./global.d.ts", "./cypress/**/*"]
 }

@@ -2,9 +2,6 @@ import styled from "styled-components";
 
 import { WHITE } from "@constants/colors";
 
-// 1rem = ...px
-// rem => font-size
-
 export const Container = styled.div`
   width: 100%;
   height: 100vh;

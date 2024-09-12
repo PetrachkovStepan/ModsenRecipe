@@ -8,6 +8,7 @@ import BurgerMenu from "@components/BurgerMenu";
 
 import { Container, MainContainer } from "./AppStyled";
 import { useTypeSelector } from "@hooks/useTypeSelector";
+import ErrorBoundary from "@components/ErrorBoundary";
 
 function App() {
   const burgerState = useTypeSelector(state => state.burger)
@@ -25,7 +26,9 @@ function App() {
       <Header />
       <BurgerMenu/>
       <MainContainer>
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </MainContainer>
       <Footer />
     </Container>
